@@ -7,8 +7,8 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 
 # Base64로 인코딩된 secretKey와 iv
-secret_key_base64 = "Base64_Encoded_SecretKey"
-iv_base64 = "Base64_Encoded_IV"
+secret_key_base64 = "nwjnt3gm4tjQXGd9w0hngSDBXXsAT9U8GcBObVA8NsY="
+iv_base64 = "ZSnm22ERRX7rbT4FtYwfdQ=="
 
 # Base64 디코딩
 secret_key = b64decode(secret_key_base64)
