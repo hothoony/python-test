@@ -1,15 +1,20 @@
 
-msg = "variable test"
-print(msg)
+# 문자
+v = "variable test"
+print(v)
 
-msg = 123
-print(msg)
 
-msg = 10 + 20
-print(msg)
+# 숫자
+v = 123
+print(v)
 
-msg = True
-print(msg)
+v = 10 + 20
+print(v)
 
-msg = False
-print(msg)
+
+# 불린
+v = True
+print(v)
+
+v = False
+print(v)
