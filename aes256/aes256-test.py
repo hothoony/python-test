@@ -1,3 +1,7 @@
+import sys
+print(sys.executable)
+print("sys.executable = " + sys.executable)
+
 from base64 import b64decode, b64encode
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
