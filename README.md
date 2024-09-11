@@ -69,14 +69,18 @@ python3 -c "from Crypto.Cipher import AES; print('OK')"
 
 ### 가상 환경 사용
 
-- ### 가상 환경 생성
 ```bash
+# 가상 환경 생성
 python3 -m venv aes256/myenv
+python3 -m venv .venv
+
+# 가상 환경 활성화
 source aes256/myenv/bin/activate
+source .venv
 ```
 
 - ### 가상 환경에서 패키지 모듈 설치
-- 터미널 프롬프트 앞에 가상환경 이름이 표시된다 (.venv)
+  - 터미널 프롬프트 앞에 가상환경 이름이 표시된다 (.venv)
 ```bash
 (.venv) ~$ python3 -m pip install pycryptodome
 ```
