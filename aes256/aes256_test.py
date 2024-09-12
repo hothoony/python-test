@@ -13,4 +13,4 @@ print(f"- encrypted  = {encrypted}")
 decrypted = aes_decrypt(encrypted)
 print(f"- decrypted  = {decrypted}")
 
-print(f"- decrypted2 = {aes_decrypt('ikQk+b0Nwc/g7/oaGnu2nA==')}")
+print(f"- decrypted2 = {aes_decrypt('mFiqTEFaBE61Bydoz5sN9Q==')}")
