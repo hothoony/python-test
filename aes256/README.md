@@ -13,3 +13,13 @@ source .venv/bin/activate
 ```bash
 pip install pycryptodome
 ```
+
+### python 패키지 삭제
+```bash
+pip uninstall pycryptodome
+```
+
+### python 패키지 목록
+```bash
+pip list
+```
