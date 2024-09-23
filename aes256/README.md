@@ -4,7 +4,12 @@
   - Venv 선택
   - Python installation 선택
 
-### python 라이브러리 설치
+### python 가상환경 활성화
+```bash
+source .venv/bin/activate
+```
+
+### python 패키지 설치
 ```bash
 pip install pycryptodome
 ```
