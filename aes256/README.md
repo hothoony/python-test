@@ -4,6 +4,9 @@
   - Venv 선택
   - Python installation 선택
 
+# 가상환경 생성
+python3 -m venv .venv
+
 ### python 가상환경 활성화
 ```bash
 source .venv/bin/activate
