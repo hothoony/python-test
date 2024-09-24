@@ -20,10 +20,10 @@ def aes_encrypt(plaintext):
     return ciphertext_base64
 
 # AES-256 복호화
-def aes_decrypt(ciphertext_base64):
+def aes_decrypt(encrypted_data):
     secret_key = b64decode(secret_key_base64)
     iv = b64decode(iv_base64)
 
     cipher = AES.new(secret_key, AES.MODE_CBC, iv)
-    decrypted = unpad(cipher.decrypt(b64decode(ciphertext_base64)), AES.block_size)
+    decrypted = unpad(cipher.decrypt(b64decode(encrypted_data)), AES.block_size)
     return decrypted.decode('utf-8')
