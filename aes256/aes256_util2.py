@@ -8,7 +8,7 @@ iv_base64 = "ZSnm22ERRX7rbT4FtYwfdQ=="
 
 # AES-256 암호화
 def aes_encrypt(plaintext):
-    print('aes_encrypt2')
+    # print('aes_encrypt2')
     
     # 문자열을 바이트 문자열로 변환
     plaintext = plaintext.encode('utf-8')
@@ -23,7 +23,7 @@ def aes_encrypt(plaintext):
 
 # AES-256 복호화
 def aes_decrypt(ciphertext_base64):
-    print('aes_decrypt2')
+    # print('aes_decrypt2')
     
     secret_key = b64decode(secret_key_base64)
     iv = b64decode(iv_base64)
