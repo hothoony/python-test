@@ -13,9 +13,10 @@ def aes_encrypt(plaintext):
     iv = b64decode(iv_base64)
 
     cipher = AES.new(key, AES.MODE_CBC, iv)
-    ciphertext = cipher.encrypt(pad(plaintext.encode('utf-8'), AES.block_size))
-    ciphertext_base64 = b64encode(ciphertext).decode('utf-8')
-    return ciphertext_base64
+    encrypted_data = cipher.encrypt(pad(plaintext.encode('utf-8'), AES.block_size))
+    
+    encrypted_base64 = b64encode(encrypted_data).decode('utf-8')
+    return encrypted_base64
 
 # AES-256 복호화
 def aes_decrypt(encrypted_data):
@@ -25,4 +26,5 @@ def aes_decrypt(encrypted_data):
 
     cipher = AES.new(key, AES.MODE_CBC, iv)
     decrypted = unpad(cipher.decrypt(b64decode(encrypted_data)), AES.block_size)
+    
     return decrypted.decode('utf-8')
