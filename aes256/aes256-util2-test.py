@@ -4,7 +4,7 @@ print("sys.executable = " + sys.executable)
 
 from aes256_util2 import aes_encrypt, aes_decrypt
 
-plaintext = "Hello, World!"
+plaintext = "Hello, World! python"
 print(f"- plaintext  = {plaintext}")
 
 encrypted = aes_encrypt(plaintext)
@@ -13,4 +13,4 @@ print(f"- encrypted  = {encrypted}")
 decrypted = aes_decrypt(encrypted)
 print(f"- decrypted  = {decrypted}")
 
-print(f"- decrypted2 = {aes_decrypt('mFiqTEFaBE61Bydoz5sN9Q==')}")
+print(f"- decrypted2 = {aes_decrypt('SVgal/KSz2A5+gYHxnJBe+vrmNg65fFnkViWgWBVvIs=')}")
