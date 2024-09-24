@@ -8,22 +8,21 @@ iv_base64 = "ZSnm22ERRX7rbT4FtYwfdQ=="
 
 # AES-256 암호화
 def aes_encrypt(plaintext):
-    # 문자열을 바이트 문자열로 변환
-    plaintext = plaintext.encode('utf-8')
     
-    secret_key = b64decode(secret_key_base64)
+    key = b64decode(secret_key_base64)
     iv = b64decode(iv_base64)
 
-    cipher = AES.new(secret_key, AES.MODE_CBC, iv)
-    ciphertext = cipher.encrypt(pad(plaintext, AES.block_size))
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    ciphertext = cipher.encrypt(pad(plaintext.encode('utf-8'), AES.block_size))
     ciphertext_base64 = b64encode(ciphertext).decode('utf-8')
     return ciphertext_base64
 
 # AES-256 복호화
 def aes_decrypt(encrypted_data):
-    secret_key = b64decode(secret_key_base64)
+    
+    key = b64decode(secret_key_base64)
     iv = b64decode(iv_base64)
 
-    cipher = AES.new(secret_key, AES.MODE_CBC, iv)
+    cipher = AES.new(key, AES.MODE_CBC, iv)
     decrypted = unpad(cipher.decrypt(b64decode(encrypted_data)), AES.block_size)
     return decrypted.decode('utf-8')

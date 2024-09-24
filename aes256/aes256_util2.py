@@ -3,7 +3,6 @@ import base64
 from base64 import b64decode, b64encode
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
-import json
 
 # Base64로 인코딩된 secretKey와 iv
 secret_key_base64 = "nwjnt3gm4tjQXGd9w0hngSDBXXsAT9U8GcBObVA8NsY="
@@ -11,6 +10,7 @@ iv_base64 = "ZSnm22ERRX7rbT4FtYwfdQ=="
 
 # AES-256 암호화
 def aes_encrypt(plaintext):
+    
     # SHA-256 해시를 사용하여 key와 iv 생성
     key = hashlib.sha256(secret_key_base64.encode('utf-8')).hexdigest()[:32] # 32바이트
     iv = hashlib.sha256(iv_base64.encode('utf-8')).hexdigest()[:16] # 16바이트
@@ -25,6 +25,7 @@ def aes_encrypt(plaintext):
 
 # AES-256 복호화
 def aes_decrypt(encrypted_data):
+    
     # SHA-256 해시를 사용하여 key와 iv 생성
     key = hashlib.sha256(secret_key_base64.encode('utf-8')).hexdigest()[:32] # 32바이트
     iv = hashlib.sha256(iv_base64.encode('utf-8')).hexdigest()[:16] # 16바이트
@@ -32,13 +33,8 @@ def aes_decrypt(encrypted_data):
     # Base64로 디코딩 후 AES 복호화
     encrypted_data_bytes = base64.b64decode(encrypted_data)
     cipher = AES.new(key.encode('utf-8'), AES.MODE_CBC, iv.encode('utf-8'))
-    decrypted_data = unpad(cipher.decrypt(encrypted_data_bytes), AES.block_size)
+    decrypted = unpad(cipher.decrypt(encrypted_data_bytes), AES.block_size)
 
     # UTF-8로 변환하여 반환
-    decrypted_str = decrypted_data.decode('utf-8')
-    
-    try:
-        # JSON 형식일 경우 파싱
-        return json.loads(decrypted_str)
-    except json.JSONDecodeError:
-        return decrypted_str
+    return decrypted.decode('utf-8')
+
