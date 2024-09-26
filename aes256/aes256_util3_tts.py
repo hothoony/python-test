@@ -29,7 +29,9 @@ def aes_decrypt(output):
     decryptedJson = unpad(decrypter.decrypt(base64.b64decode(output)), block_size=32).decode('utf-8')
     return decryptedJson
 
+
 plainText = {'uid': '377bfc9c17e02340282505cb6c3a4001', 'local_ip': '192.168.220.199'}
+print(f"plainText => {plainText}")
 plainText = pad(json.dumps({'result': True, 'file_path': plainText}).encode('utf-8'), block_size=32)
 print(f"plainText => {plainText}")
 
