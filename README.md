@@ -84,3 +84,7 @@ source .venv
 ```bash
 (.venv) ~$ python3 -m pip install pycryptodome
 ```
+
+### 개발 스택
+- Django
+- FastAPI
