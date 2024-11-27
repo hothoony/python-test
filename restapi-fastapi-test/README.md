@@ -5,7 +5,9 @@
 1. 가상환경 생성 및 활성화
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate  # macOS/Linux
+
+# 가상환경 활성화
+source .venv/bin/activate
 ```
 
 2. 패키지 설치

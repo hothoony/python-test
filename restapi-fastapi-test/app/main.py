@@ -10,7 +10,8 @@ logger = setup_logger()
 app = FastAPI(title="Simple REST API")
 
 # 루트 엔드포인트
-@app.get("/", status_code=status.HTTP_200_OK)
+# @app.get("/", status_code=status.HTTP_200_OK)
+@app.get("/")
 async def read_root():
     logger.debug("logger debug")        # debug 레벨 로그
     logger.info("logger info")          # info 레벨 로그
