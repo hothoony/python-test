@@ -1,4 +1,13 @@
+# macOS
 .DS_Store
-.git/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
 .venv/
-__pycache__
+venv/
+env/
+ENV/
