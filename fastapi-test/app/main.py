@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Response, status
 from .config.logger_config import setup_logger
 from .controllers.item_controller import router as item_router
+from .controllers.qna_controller import router as qna_router
 
 # 로거 설정
 logger = setup_logger()
@@ -25,3 +26,4 @@ async def read_root():
 
 # 라우터 등록
 app.include_router(item_router)
+app.include_router(qna_router)
