@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Response, status
-from app.config.logger_config import setup_logger
-from app.controllers.item_controller import router as item_router
+from .config.logger_config import setup_logger
+from .controllers.item_controller import router as item_router
 
 # 로거 설정
 logger = setup_logger()

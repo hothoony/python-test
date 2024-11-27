@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ## 서버 실행 방법
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 ## API 엔드포인트
@@ -27,3 +27,12 @@ uvicorn main:app --reload
 - `GET /items/{item_id}` : 특정 아이템 조회
 - `PUT /items/{item_id}` : 특정 아이템 수정
 - `DELETE /items/{item_id}` : 특정 아이템 삭제
+
+```bash
+curl -X GET -i http://127.0.0.1:8000
+curl -X POST -i http://127.0.0.1:8000/items -H "Content-Type: application/json" -d '{"name": "Foo"}'
+curl -X GET -i http://127.0.0.1:8000/items
+curl -X GET -i http://127.0.0.1:8000/items/1
+curl -X PUT -i http://127.0.0.1:8000/items/1 -H "Content-Type: application/json" -d '{"name": "Bar"}'
+curl -X DELETE -i http://127.0.0.1:8000/items/1
+```
