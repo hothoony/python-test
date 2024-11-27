@@ -4,13 +4,22 @@
 
 1. 가상환경 생성 및 활성화
 ```bash
-python3 -m venv venv
-source venv/bin/activate  # macOS/Linux
+python3 -m venv .venv
+source .venv/bin/activate  # macOS/Linux
 ```
 
 2. 패키지 설치
 ```bash
+pip install --upgrade pip
 pip install -r requirements.txt
+```
+```bash
+pip install fastapi
+pip install uvicorn
+pip install pydantic
+```
+```bash
+pip list
 ```
 
 ## 서버 실행 방법
