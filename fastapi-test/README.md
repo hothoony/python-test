@@ -19,6 +19,9 @@ pip install uvicorn
 pip install pydantic
 ```
 ```bash
+pip uninstall fastapi
+```
+```bash
 pip list
 ```
 
