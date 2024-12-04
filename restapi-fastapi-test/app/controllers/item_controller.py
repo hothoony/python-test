@@ -15,16 +15,12 @@ async def create_item(item: ItemSchema):
         status_code=status.HTTP_201_CREATED
     )
 
-@router.get("", status_code=status.HTTP_200_OK)
+@router.get("")
 async def read_items():
     result = service.get_all_items()
-    return Response(
-        content=json.dumps(result),
-        media_type="application/json",
-        status_code=status.HTTP_200_OK
-    )
+    return result
 
-@router.get("/{item_id}", status_code=status.HTTP_200_OK)
+@router.get("/{item_id}")
 async def read_item(item_id: int):
     result = service.get_item_by_id(item_id)
     if result is None:
@@ -39,7 +35,7 @@ async def read_item(item_id: int):
         status_code=status.HTTP_200_OK
     )
 
-@router.put("/{item_id}", status_code=status.HTTP_200_OK)
+@router.put("/{item_id}")
 async def update_item(item_id: int, item: ItemSchema):
     result = service.update_item(item_id, item)
     if result is None:
@@ -54,7 +50,7 @@ async def update_item(item_id: int, item: ItemSchema):
         status_code=status.HTTP_200_OK
     )
 
-@router.delete("/{item_id}", status_code=status.HTTP_200_OK)
+@router.delete("/{item_id}")
 async def delete_item(item_id: int):
     result = service.delete_item(item_id)
     if result is None:
