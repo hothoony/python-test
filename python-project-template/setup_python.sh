@@ -6,8 +6,10 @@ python3 --version
 # deactivate
 # rm -rf .venv
 
-# 가상환경 설정 및 활성화
-python3 -m venv .venv && source ./.venv/bin/activate
+# 가상환경 생성
+python3 -m venv .venv
+# 가상환경 활성화
+source ./.venv/bin/activate
 
 # 라이브러리 설치
 pip install pytest black flake8
