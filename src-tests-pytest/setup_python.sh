@@ -2,9 +2,9 @@
 
 python3 --version
 
-# # 가상환경 비활성화
-# deactivate
-# rm -rf .venv
+# 가상환경 비활성화
+deactivate
+rm -rf .venv
 
 # 가상환경 생성
 python3 -m venv .venv
@@ -15,6 +15,9 @@ source ./.venv/bin/activate
 pip install pytest black flake8
 pip install dotenv
 pip install loguru
+
+# 패키지를 개발 모드로 설치
+pip install -e .
 
 # 설치된 라이브러리 확인
 pip list
