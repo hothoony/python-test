@@ -92,3 +92,13 @@ if __name__ == "__main__":
     for ddl in ddl_output:
         print(ddl)
         print()
+
+    # Save DDL to file
+    output_file = 'out/ddl_output.sql'
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            for ddl in ddl_output:
+                f.write(ddl + '\n\n')
+        print(f"✅ DDL이 {output_file} 파일로 저장되었습니다.")
+    except Exception as e:
+        print(f"❌ DDL 파일 저장 중 오류가 발생했습니다: {e}")
