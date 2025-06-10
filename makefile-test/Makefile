@@ -2,67 +2,68 @@
 PYTHON := python3
 VENV := .venv
 PIP := $(VENV)/bin/pip
-PYTEST := $(VENV)/bin/pytest
-BLACK := $(VENV)/bin/black
-FLAKE8 := $(VENV)/bin/flake8
 
-# 기본 타겟
+# 타겟 정의
+.PHONY: vars
+vars: 
+	@echo $(PYTHON)
+	@echo $(VENV)
+	@echo $(PIP)
+
+# 타겟 정의
 .PHONY: all
-all: install format lint test
-	@echo "All tasks completed!"
+all: install venv test
 
-# 가상환경 생성
-.PHONY: venv
-venv:
-	@echo "Creating virtual environment..."
-	@$(PYTHON) -m venv $(VENV)
-	# @source ./$(VENV)/bin/activate
-	@echo "Virtual environment created!"
+# 타겟 정의
+.PHONY: all2
+all2: test venv install
 
-# 의존성 설치
-.PHONY: install
-install: venv
-	@echo "Installing dependencies..."
-	@$(PIP) install --upgrade pip
-	@$(PIP) install pytest black flake8
-	# @$(PIP) install -r requirements.txt
-	@echo "Dependencies installed!"
-
-# 코드 포맷팅
-.PHONY: format
-format: install
-	@echo "Formatting code..."
-	@$(BLACK) src/ tests/
-	@echo "Formatting completed!"
-
-# 린팅
-.PHONY: lint
-lint: install
-	@echo "Linting code..."
-	@$(FLAKE8) src/ tests/
-	@echo "Linting completed!"
-
-# 테스트 실행
-.PHONY: test
-test: install
-	@echo "Running tests..."
-	@$(PYTEST) tests/
-	@echo "Tests completed!"
-
-# 정리
-.PHONY: clean
-clean:
-	@echo "Cleaning up..."
-	@rm -rf $(VENV)
-	@find . -type d -name "__pycache__" -exec rm -rf {} +
-	@find . -type f -name "*.pyc" -delete
-	@echo "Cleanup completed!"
-
+# 타겟 정의
 .PHONY: setup
-setup: 
-	@mkdir -p src tests
-	@touch src/__init__.py tests/__init__.py
-	@touch src/main.py tests/test_main.py
-	@touch .gitignore .env
-	@touch README.md
-	@echo "Setup completed!"
+setup: install venv
+
+# 타겟 정의
+.PHONY: install
+install:
+	@echo "install begin"
+	@echo "install end"
+
+# 타겟 정의
+.PHONY: venv
+venv: install
+	@echo "venv begin"
+	@echo "venv end"
+
+# 타겟 정의
+.PHONY: test
+test: 
+	@echo "test begin"
+	@echo "test end"
+
+# 타겟 정의
+.PHONY: lint
+lint: 
+	@echo "lint begin"
+	@echo "lint end"
+
+# 타겟 정의
+.PHONY: format
+format: 
+	@echo "format begin"
+	@echo "format end"
+
+# 타겟 정의 (@이 없으면 명령어가 출력된다)
+.PHONY: run-script
+run-script:
+	echo "run-script begin"
+	hostname
+	date
+	echo "run-script end"
+
+# 타겟 정의 (@이 있으면 명령어가 출력되지 않는다)
+.PHONY: run-script2
+run-script2:
+	@echo "run-script2 begin"
+	@hostname
+	@date
+	@echo "run-script2 end"
