@@ -1,6 +1,10 @@
+## 개요
+- 운영 소스코드를 `src/` 에 위치
+- 테스트 코드를 `tests/` 에 위치
+- `pytest` 로 테스트 실행
+
 ### 가상환경 활성화
 ```shell
-# Linux/macOS
 source .venv/bin/activate
 ```
 
@@ -9,7 +13,7 @@ source .venv/bin/activate
 pip install -r requirements-dev.txt
 ```
 
-### 개발 모드로 패키지 설치
+### 개발 모드로 패키지 설치 (pytest 실행을 위해 필요)
 ```shell
 pip install -e .
 ```
