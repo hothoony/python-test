@@ -34,6 +34,10 @@ pytest tests/my_package/test_calculator_error.py
 pytest tests/boolean
 pytest tests/my_package
 
+# 테스트 파일 중 특정 함수만 실행
+pytest -v tests/boolean/test_try_catch.py::test_try
+pytest -v tests/boolean/test_try_catch.py::test_try2
+
 # 커버리지 리포트 포함
 pytest --cov=my_package
 
