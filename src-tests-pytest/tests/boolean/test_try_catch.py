@@ -5,6 +5,7 @@ import pytest
 
 
 def test_try():
+    print('')
     try:
         print('try')
     except:
@@ -14,6 +15,7 @@ def test_try():
     assert True is True
 
 def test_try2():
+    print('')
     try:
         print('try')
     except:

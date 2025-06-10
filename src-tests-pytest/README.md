@@ -57,3 +57,18 @@ tests/boolean/test_try_catch.py::test_try2 PASSED
 # pytest tests/boolean/test_try_catch.py
 tests/boolean/test_try_catch.py ..
 ```
+
+## 테스트 실행시 print 를 출력하려면 `-s` 옵션을 추가한다
+```shell
+# pytest -vs tests/boolean/test_try_catch.py
+
+tests/boolean/test_try_catch.py::test_try 
+try
+finally
+PASSED
+
+tests/boolean/test_try_catch.py::test_try2 
+try
+finally
+PASSED
+```
