@@ -13,7 +13,7 @@ source ./.venv/bin/activate
 
 # 라이브러리 설치
 pip install pytest black flake8
-pip install dotenv
+pip install python-dotenv
 pip install loguru
 pip install sqlparse
 
