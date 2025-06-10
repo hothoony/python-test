@@ -24,6 +24,7 @@ pytest tests/boolean/test_boolean.py
 pytest tests/boolean/test_boolean_fail.py
 pytest tests/my_package/test_calculator_add.py
 pytest tests/my_package/test_calculator.py
+pytest tests/my_package/test_calculator_error.py
 
 # 특정 패키지만 실행
 pytest tests/boolean
