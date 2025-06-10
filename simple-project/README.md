@@ -19,6 +19,7 @@ pip install -e .
 # 모든 테스트 실행
 pytest
 pytest tests/my_package/test_calculator_add.py
+pytest tests/my_package/test_boolean.py
 
 # 커버리지 리포트 포함
 pytest --cov=my_package
