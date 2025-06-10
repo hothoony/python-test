@@ -18,8 +18,16 @@ pip install -e .
 ```shell
 # 모든 테스트 실행
 pytest
+
+# 특정 테스트 파일만 실행
+pytest tests/boolean/test_boolean.py
+pytest tests/boolean/test_boolean_fail.py
 pytest tests/my_package/test_calculator_add.py
-pytest tests/my_package/test_boolean.py
+pytest tests/my_package/test_calculator.py
+
+# 특정 패키지만 실행
+pytest tests/boolean
+pytest tests/my_package
 
 # 커버리지 리포트 포함
 pytest --cov=my_package
