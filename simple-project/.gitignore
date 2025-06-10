@@ -1,0 +1,70 @@
+# 1. Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 2. 환경 구성
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+*.env
+*.venv
+
+# 3. OS 생성 파일
+.DS_Store
+Thumbs.db
+
+# 4. IDE 설정 파일
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 5. 테스트/로깅 결과
+*.log
+*.out
+*.coverage
+.cache/
+coverage.xml
+htmlcov/
+.tox/
+.pytest_cache/
+.nox/
+
+# 6. 빌드/배포 산출물
+build/
+dist/
+*.egg-info/
+.eggs/
+*.spec
+
+# 7. 패키징 임시 파일
+*.tar.gz
+*.zip
+*.whl
+
+# 8. Jupyter notebook checkpoint
+.ipynb_checkpoints
+
+# 9. MyPy, Pylint, etc.
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+
+# 10. Docker 관련 (선택)
+docker-compose.override.yml
+*.pid
+
+# 11. Systemd 서비스 파일 (선택)
+*.service
+
+# 12. 기타 보안 위험 항목 (토큰 등)
+secrets.json
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
