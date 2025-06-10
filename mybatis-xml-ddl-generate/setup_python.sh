@@ -10,6 +10,8 @@ pip install dotenv
 pip install loguru
 pip install sqlparse
 
+pip list
+
 # mkdir src/ tests/
 # touch src/__init__.py tests/__init__.py
 # touch src/main.py tests/test_main.py
