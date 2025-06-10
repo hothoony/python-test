@@ -12,7 +12,7 @@ python3 -m venv .venv
 source ./.venv/bin/activate
 
 # 라이브러리 설치
-pip install pytest black flake8
+pip install pytest black flake8 mypy
 pip install python-dotenv
 pip install loguru
 pip install sqlparse
