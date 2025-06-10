@@ -44,3 +44,16 @@ pytest --cov=my_package
 # 자세한 출력과 함께 테스트 실행
 pytest -v
 ```
+
+## 테스트 실행 -v 옵션
+- `-v` 옵션 사용시
+```shell
+# pytest -v tests/boolean/test_try_catch.py
+tests/boolean/test_try_catch.py::test_try PASSED
+tests/boolean/test_try_catch.py::test_try2 PASSED
+```
+- `-v` 옵션 미사용시
+```shell
+# pytest tests/boolean/test_try_catch.py
+tests/boolean/test_try_catch.py ..
+```
