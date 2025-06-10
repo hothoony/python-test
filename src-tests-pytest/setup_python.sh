@@ -2,9 +2,9 @@
 
 python3 --version
 
-# 가상환경 비활성화
-deactivate
-rm -rf .venv
+# # 가상환경 비활성화
+# deactivate
+# rm -rf .venv
 
 # 가상환경 생성
 python3 -m venv .venv
