@@ -12,18 +12,24 @@ source .venv/bin/activate
 
 2. 패키지 설치
 ```bash
+# pip를 최신 버전으로 업그레이드
 pip install --upgrade pip
+
+# requirements.txt를 사용하여 패키지 설치
 pip install -r requirements.txt
 ```
 ```bash
+# 패키지 설치
 pip install fastapi
 pip install uvicorn
 pip install pydantic
 ```
 ```bash
+# 패키지 설치 제거
 pip uninstall fastapi
 ```
 ```bash
+# 설치된 패키지 목록 확인
 pip list
 ```
 

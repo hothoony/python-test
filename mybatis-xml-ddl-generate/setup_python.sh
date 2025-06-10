@@ -17,7 +17,9 @@ pip install dotenv
 pip install loguru
 pip install sqlparse
 
-# 개발 모드로 패키지 설치 (pytest 로 테스트를 실행하기 위해 필요)
+# 현재 디렉토리의 패키지를 개발 모드로 설치
+# 디렉토리 안에 setup.py 또는 pyproject.toml이 있어야 함
+# pytest 로 테스트를 실행하기 위해 필요
 pip install -e .
 
 # 설치된 라이브러리 확인
