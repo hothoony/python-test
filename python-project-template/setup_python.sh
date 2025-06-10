@@ -16,6 +16,9 @@ pip install pytest black flake8
 pip install dotenv
 pip install loguru
 
+# 설치된 라이브러리 확인
+pip list
+
 # mkdir src/
 # touch src/main.py src/__init__.py
 # mkdir tests/
