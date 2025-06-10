@@ -1,0 +1,6 @@
+
+# 타겟 정의
+.PHONY: mytask
+mytask: 
+	@echo "mytask begin"
+	@echo "mytask end"
