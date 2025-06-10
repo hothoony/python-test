@@ -67,7 +67,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) != 2:
-        print("사용법: python3 generate_ddl_all.py <mapper 디렉토리 경로>")
+        print("사용법: python3 generate_ddl.py <mapper 디렉토리 경로>")
         sys.exit(1)
 
     root_dir = sys.argv[1]
