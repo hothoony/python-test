@@ -2,7 +2,7 @@ import os
 import xml.etree.ElementTree as ET
 import re
 from collections import defaultdict
-from my_app.config.base_config import Config
+from config.base_config import Config
 
 def method01():
     print('method01 begin')
