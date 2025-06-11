@@ -1,12 +1,5 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
-setup(
-    name="env-dev-prod",
-    version="0.1",
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
-    python_requires=">=3.6",
-    install_requires=[
-        # 여기에 필요한 패키지들을 추가하세요
-    ],
-)
+# 이제 대부분의 설정은 pyproject.toml에서 관리됩니다.
+# 이 파일은 하위 호환성을 위해 유지됩니다.
+setup()
