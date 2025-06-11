@@ -20,11 +20,14 @@ def method02():
     return 'ok'
 
 def run():
-    print("환경:", Config.APP_ENV)
-    print("디버그 모드:", Config.DEBUG)
-    print("DB 호스트:", Config.DB_HOST)
-    print("DB 포트:", Config.DB_PORT)
-    print("시크릿 키:", Config.SECRET_KEY)
+    print("- APP_ENV:", Config.APP_ENV)
+    print("- DEBUG:", Config.DEBUG)
+    print("- SECRET_KEY:", Config.SECRET_KEY)
+    print("- DB_HOST:", Config.DB_HOST)
+    print("- DB_PORT:", Config.DB_PORT)
+    print("- DB_USER:", Config.DB_USER)
+    print("- DB_PASSWORD:", Config.DB_PASSWORD)
+    
 
 if __name__ == "__main__":
     run()
