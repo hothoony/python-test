@@ -3,7 +3,7 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "my_app"
+name = "mybatis-xml-ddl-generate"
 version = "0.1"
 requires-python = ">=3.6"
 dependencies = [
