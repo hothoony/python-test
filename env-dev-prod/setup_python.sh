@@ -11,6 +11,9 @@ python3 -m venv .venv
 # 가상환경 활성화
 source .venv/bin/activate
 
+# PYTHONPATH 설정
+# export PYTHONPATH=$PYTHONPATH:$(pwd)
+
 # 라이브러리 설치
 pip install pytest black flake8 mypy
 pip install python-dotenv
