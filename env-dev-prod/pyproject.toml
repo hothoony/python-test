@@ -11,9 +11,13 @@ dependencies = [
 ]
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+# package_dir을 제거하고 packages.find에서 직접 관리
+# package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
-where = ["src"]
+# src 디렉토리와 루트 디렉토리 모두에서 패키지 검색
+where = ["src", "."]
+# 포함할 패키지 패턴 지정
 include = ["my_app*", "config*"]
+# 네임스페이스 패키지 사용 안 함
 namespaces = false
