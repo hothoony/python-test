@@ -9,7 +9,7 @@ rm -rf .venv
 ## 프로젝트 초기화
 ```shell
 setup_python.sh
-source ./.venv/bin/activate
+source .venv/bin/activate
 ```
 
 ### 설치된 패키지 목록 확인하기
