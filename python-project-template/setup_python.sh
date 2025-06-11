@@ -24,3 +24,9 @@ pip install -e .
 
 # 설치된 라이브러리 확인
 pip list
+
+# 테스트 실행
+pytest
+pytest -v
+pytest -vs
+pytest -vs tests/test_main.py::test_method01
