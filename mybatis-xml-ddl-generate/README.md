@@ -4,7 +4,7 @@
 ```shell
 PROJ_DIR=/Volumes/mydata/office_work/project/ploonet_total/project_src/ploonet-total-backend && \
 XML_DIR=src/main/resources/mapper && \
-python3 src/my_package/generate_ddl.py $PROJ_DIR/$XML_DIR
+python3 src/my_app/generate_ddl.py $PROJ_DIR/$XML_DIR
 ```
 
 ### 결과
