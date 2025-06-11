@@ -5,19 +5,27 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "env-dev-prod"
 version = "0.1"
+description = "Python project template with dev/prod environments"
 requires-python = ">=3.6"
 dependencies = [
-    # 의존성 목록
+    "python-dotenv",
+    "loguru",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+    "mypy",
 ]
 
 [tool.setuptools]
-# package_dir을 제거하고 packages.find에서 직접 관리
-# package-dir = {"" = "src"}
+package-dir = {"": "src"}
+packages = ["my_app", "config"]
 
-[tool.setuptools.packages.find]
-# src 디렉토리와 루트 디렉토리 모두에서 패키지 검색
-where = ["src", "."]
-# 포함할 패키지 패턴 지정
-include = ["my_app*", "config*"]
-# 네임스페이스 패키지 사용 안 함
-namespaces = false
+[tool.setuptools.package-data]
+"*" = ["*.py", "*.txt", "*.yaml", "*.json"]
+
+[project.scripts]
+myapp = "my_app.main:run"
