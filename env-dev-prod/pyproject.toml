@@ -28,6 +28,6 @@ dev = [
 myapp = "my_app.main:run"
 
 [tool.setuptools]
-package-dir = {"src" = "src"}
-packages = ["my_app", "config"]  # 수정된 부분
+package-dir = {"": "src"}
+packages = ["my_app", "config"]
 package-data = {"*" = ["*.py", "*.txt", "*.yaml", "*.json"]}
