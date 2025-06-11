@@ -1,18 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="your-package-name",
-    version="0.1.0",
-    description="설명 예시",
-    author="Your Name",
-    author_email="you@example.com",
-    packages=find_packages(exclude=["tests*"]),
+    name="mybatis_xml_ddl_generate",
+    version="0.1",
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
+    python_requires=">=3.6",
     install_requires=[
-        "python-dotenv",
-        "loguru"
+        # 여기에 필요한 패키지들을 추가하세요
     ],
-    extras_require={
-        "dev": ["pytest", "black", "flake8", "mypy"]
-    },
-    python_requires=">=3.8",
 )

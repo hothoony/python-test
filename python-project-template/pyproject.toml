@@ -1,24 +1,17 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "your-package-name"
-version = "0.1.0"
-description = "설명 예시"
-authors = [
-  { name="Your Name", email="you@example.com" }
-]
+name = "python-project-template"
+version = "0.1"
+requires-python = ">=3.6"
 dependencies = [
-  "python-dotenv",
-  "loguru"
+    # 여기에 필요한 패키지들을 추가하세요
 ]
-requires-python = ">=3.8"
 
-[project.optional-dependencies]
-dev = [
-  "pytest",
-  "black",
-  "flake8",
-  "mypy"
-]
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
