@@ -1,0 +1,21 @@
+import os
+from dotenv import load_dotenv
+
+# ENV 값에 따라 로드할 .env 파일 결정
+env = os.getenv("ENV", "dev").lower()
+
+env_file_map = {
+    "dev": ".env.development",
+    "prod": ".env.production",
+}
+
+env_file = env_file_map.get(env, ".env.development")
+print("env_file=", env_file)
+load_dotenv(dotenv_path=env_file)
+
+class Config:
+    APP_ENV = os.getenv("APP_ENV", env)
+    DEBUG = os.getenv("DEBUG", "false").lower() == "true"
+    DB_HOST = os.getenv("DB_HOST", "localhost")
+    DB_PORT = int(os.getenv("DB_PORT", 5432))
+    SECRET_KEY = os.getenv("SECRET_KEY", "")

@@ -19,7 +19,8 @@ pip list
 
 ### 프로젝트 실행하기
 ```shell
-python3 src/my_app/main.py
+ENV=dev python3 src/my_app/main.py     # 개발 환경 실행
+ENV=prod python3 src/my_app/main.py    # 운영 환경 실행
 ```
 
 ### 테스트 실행하기
@@ -27,6 +28,4 @@ python3 src/my_app/main.py
 pytest
 pytest -v
 pytest -vs
-pytest -vs tests/test_main.py::test_method01
-pytest -vs tests/test_main.py::test_method02
 ```

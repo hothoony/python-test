@@ -15,7 +15,7 @@ source ./.venv/bin/activate
 pip install pytest black flake8 mypy
 pip install python-dotenv
 pip install loguru
-pip install sqlparse
+# pip install sqlparse
 
 # 현재 디렉토리의 패키지를 개발 모드로 설치
 # 디렉토리 안에 setup.py 또는 pyproject.toml이 있어야 함
@@ -26,7 +26,6 @@ pip install -e .
 pip list
 
 # 테스트 실행
-pytest
-pytest -v
-pytest -vs
-pytest -vs tests/test_main.py::test_method01
+# pytest
+# pytest -v
+# pytest -vs
