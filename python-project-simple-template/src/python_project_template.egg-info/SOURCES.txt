@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+src/my_app/__init__.py
+src/my_app/main.py
+src/python_project_template.egg-info/PKG-INFO
+src/python_project_template.egg-info/SOURCES.txt
+src/python_project_template.egg-info/dependency_links.txt
+src/python_project_template.egg-info/top_level.txt
+tests/test_main.py
