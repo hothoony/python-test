@@ -4,9 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "env-dev-prod"
-version = "0.1"
+version = "0.1.0"
 description = "Python project template with dev/prod environments"
-requires-python = ">=3.6"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
 dependencies = [
     "python-dotenv",
     "loguru",
@@ -20,12 +24,10 @@ dev = [
     "mypy",
 ]
 
-[tool.setuptools]
-package-dir = {"": "src"}
-packages = ["my_app", "config"]
-
-[tool.setuptools.package-data]
-"*" = ["*.py", "*.txt", "*.yaml", "*.json"]
-
 [project.scripts]
 myapp = "my_app.main:run"
+
+[tool.setuptools]
+package-dir = {"src" = "src"}
+packages = ["my_app", "config"]  # 수정된 부분
+package-data = {"*" = ["*.py", "*.txt", "*.yaml", "*.json"]}
