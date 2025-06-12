@@ -15,7 +15,7 @@ source .venv/bin/activate
 # export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 # pip 업그레이드
-python3 -m pip install --upgrade pip
+# python3 -m pip install --upgrade pip
 
 # 라이브러리 설치
 pip install pytest black flake8 mypy
