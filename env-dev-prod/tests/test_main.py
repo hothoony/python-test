@@ -2,7 +2,7 @@ import os
 import sys
 
 import pytest
-from my_app.main import method01, method02, run
+from myapp.main import method01, method02, run
 
 def test_method01():
     result = method01()
