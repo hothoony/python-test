@@ -46,9 +46,9 @@ def setup_logger(name=__name__):
         # atTime은 "그 기준점으로부터 얼마나 지연시킬지"를 지정하는 것입니다.
         file_handler = TimedRotatingFileHandler(
             log_file,
-            when='midnight',
-            atTime=time(23, 21),  # 매일 오전 2시 30분에 로테이션
-            interval=1,
+            interval=1,         # 1일 간격으로 로테이션
+            when='midnight',    # 자정을 기준점으로 설정
+            atTime=time(0, 0),  # 매일 자정 00:00에 로테이션
             # backupCount=30,
             encoding='utf-8'
         )
