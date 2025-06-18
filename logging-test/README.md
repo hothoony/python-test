@@ -19,6 +19,7 @@ pip list
 
 ### 프로젝트 실행하기
 ```shell
+# ENV=dev python -m src.myapp.main
 ENV=dev python3 src/myapp/main.py     # 개발 환경 실행
 ENV=prod python3 src/myapp/main.py    # 운영 환경 실행
 ```
