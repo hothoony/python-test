@@ -3,27 +3,31 @@ import sys
 
 import xml.etree.ElementTree as ET
 import re
+import logging
 from collections import defaultdict
 from config.base_config import Config
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
 def method01():
-    print('method01 begin')
-    print('method01 end')
+    logger.info('method01 begin')
+    logger.info('method01 end')
     return 'ok'
 
 def method02():
-    print('method02 begin')
-    print('method02 end')
+    logger.info('method02 begin')
+    logger.info('method02 end')
     return 'ok'
 
 def run():
-    print("- APP_ENV:", Config.APP_ENV)
-    print("- DEBUG:", Config.DEBUG)
-    print("- SECRET_KEY:", Config.SECRET_KEY)
-    print("- DB_HOST:", Config.DB_HOST)
-    print("- DB_PORT:", Config.DB_PORT)
-    print("- DB_USER:", Config.DB_USER)
-    print("- DB_PASSWORD:", Config.DB_PASSWORD)
+    logger.info("- APP_ENV:", Config.APP_ENV)
+    logger.info("- DEBUG:", Config.DEBUG)
+    logger.info("- SECRET_KEY:", Config.SECRET_KEY)
+    logger.info("- DB_HOST:", Config.DB_HOST)
+    logger.info("- DB_PORT:", Config.DB_PORT)
+    logger.info("- DB_USER:", Config.DB_USER)
+    logger.info("- DB_PASSWORD:", Config.DB_PASSWORD)
     
 
 if __name__ == "__main__":

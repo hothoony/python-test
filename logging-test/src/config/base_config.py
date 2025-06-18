@@ -1,5 +1,9 @@
 import os
 from dotenv import load_dotenv
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 # ENV 값에 따라 로드할 .env 파일 결정
 env = os.getenv("ENV", "dev").lower()
@@ -10,7 +14,7 @@ env_file_map = {
 }
 
 env_file = env_file_map.get(env, ".env.development")
-print("env_file=", env_file)
+logger.info("env_file=", env_file)
 load_dotenv(dotenv_path=env_file)
 
 class Config:
