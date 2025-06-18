@@ -7,14 +7,55 @@ logger.setLevel(logging.INFO)
 ```
 
 ## 2. 환경별 로깅 설정 분리
+- `logging_config.py`
 ```python
 import logging.config
 
-def setup_logging(env='production'):
-    if env == 'development':
-        config = {}
+def setup_logging(env="production"):
+    if env == "development":
+        config = {
+            "version": 1,
+            "formatters": {
+                "default": {
+                    "format": "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
+                },
+            },
+            "handlers": {
+                "console": {
+                    "class": "logging.StreamHandler",
+                    "formatter": "default",
+                    "level": "DEBUG",
+                },
+            },
+            "root": {
+                "handlers": ["console"],
+                "level": "DEBUG",
+            },
+        }
     else:
-        config = {}
+        config = {
+            "version": 1,
+            "formatters": {
+                "json": {
+                    "()": "pythonjsonlogger.jsonlogger.JsonFormatter",
+                    "format": "%(asctime)s %(levelname)s %(name)s %(message)s",
+                }
+            },
+            "handlers": {
+                "file": {
+                    "class": "logging.handlers.TimedRotatingFileHandler",
+                    "filename": "/var/log/myapp/app.log",
+                    "when": "midnight",
+                    "backupCount": 14,
+                    "formatter": "json",
+                }
+            },
+            "root": {
+                "handlers": ["file"],
+                "level": "INFO",
+            },
+        }
+
     logging.config.dictConfig(config)
 ```
 
