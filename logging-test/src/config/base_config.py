@@ -28,6 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 #     DB_USER = os.getenv("DB_USER")
 #     DB_PASSWORD = os.getenv("DB_PASSWORD")
 class Config:
+    
     """기본 설정 클래스"""
     # 애플리케이션 설정
     APP_ENV: str = os.getenv("APP_ENV", env)
