@@ -116,15 +116,24 @@ def setup_logging(app_env: str = 'dev', log_level: Optional[str] = None, log_dir
     
     # File handler (only in production or when explicitly enabled in dev)
     if app_env == 'prod' or os.getenv('ENABLE_FILE_LOGGING', '').lower() == 'true':
-        # Rotating file handler
-        file_handler = logging.handlers.RotatingFileHandler(
-            log_path / 'app.log',
-            maxBytes=10 * 1024 * 1024,  # 10MB
-            backupCount=5,
-            encoding='utf-8'
+        # Ensure log directory exists
+        log_path.mkdir(parents=True, exist_ok=True)
+        
+        # Daily rotating file handler
+        file_handler = logging.handlers.TimedRotatingFileHandler(
+            filename=log_path / 'app.log',
+            when='midnight',     # Rotate at midnight
+            interval=1,          # Create new file daily
+            backupCount=30,      # Keep logs for 30 days
+            encoding='utf-8',
+            utc=False,           # Use local timezone
+            atTime=None          # Rotate at midnight
         )
         file_handler.setFormatter(console_formatter if app_env == 'dev' else JsonFormatter())
+        file_handler.suffix = '%Y-%m-%d'  # Add date to rotated log files
         root_logger.addHandler(file_handler)
+        
+        logger.info(f"File logging enabled. Logs will be saved to: {log_path.absolute()}")
     
     # Add masking filter
     masking_filter = MaskingFilter()
