@@ -28,7 +28,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 #     DB_USER = os.getenv("DB_USER")
 #     DB_PASSWORD = os.getenv("DB_PASSWORD")
 class Config:
-    
     """기본 설정 클래스"""
     # 애플리케이션 설정
     APP_ENV: str = os.getenv("APP_ENV", env)
@@ -42,7 +41,7 @@ class Config:
     DB_PASSWORD: str = os.getenv("DB_PASSWORD", "")
     
     # 로깅 설정
-    LOG_LEVEL: str = os.getenv("LOG_LEVEL", "DEBUG" if APP_ENV == "dev" else "INFO")
+    LOG_LEVEL: str = os.getenv("LOG_LEVEL", "DEBUG" if os.getenv("APP_ENV", env) == "dev" else "INFO")
     LOG_DIR: str = os.getenv("LOG_DIR", str(BASE_DIR / "logs"))
     ENABLE_FILE_LOGGING: bool = os.getenv("ENABLE_FILE_LOGGING", "true").lower() == "true"
     
