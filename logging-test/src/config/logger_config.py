@@ -55,17 +55,17 @@ def setup_logger(name=__name__):
             log_file,
             interval=1,         # 1일 간격으로 로테이션
             when='midnight',    # 자정을 기준점으로 설정
-            atTime=time(0, 0),  # 매일 자정 00:00에 로테이션
+            # atTime=time(0, 0),  # 매일 자정 00:00에 로테이션
+            atTime=time(10, 53),
             # backupCount=30,
             encoding='utf-8'
         )
         file_handler.setFormatter(formatter)
         
-        # 로그 파일명 포맷: app.YYYY-MM-DD.log
+        # 로그 파일명 포맷: logs/YYYY/YYYYMM/app.YYYY-MM-DD.log
         def namer(default_name):
             # default_name은 logs/app.log.YYYYMMDD 형태
-            # logs/app.YYYY-MM-DD.log 형태로 변경
-            directory = os.path.dirname(default_name)  # logs
+            base_dir = os.path.dirname(default_name)  # logs
             filename = os.path.basename(default_name)  # app.log.YYYYMMDD
             
             # app.log.YYYYMMDD에서 날짜 부분 추출
@@ -73,11 +73,16 @@ def setup_logger(name=__name__):
             if len(parts) >= 3:
                 date_part = parts[-1]  # YYYYMMDD
                 if len(date_part) == 8 and date_part.isdigit():
-                    # YYYYMMDD를 YYYY-MM-DD로 변환
-                    formatted_date = f"{date_part[:4]}-{date_part[4:6]}-{date_part[6:8]}"
-                    return os.path.join(directory, f"app.{formatted_date}.log")
+                    year = date_part[:4]  # YYYY
+                    month = date_part[4:6]  # MM
+                    # YYYY/YYYYMM 디렉토리 생성
+                    date_dir = os.path.join(base_dir, year, f"{year}{month}")
+                    os.makedirs(date_dir, exist_ok=True)
+                    # YYYY-MM-DD 형식의 파일명 생성
+                    formatted_date = f"{year}-{month}-{date_part[6:8]}"
+                    return os.path.join(date_dir, f"app.{formatted_date}.log")
             
-            # 기본값 반환
+            # 기본값 반환 (변경이 필요한 경우)
             return default_name
         
         file_handler.namer = namer
