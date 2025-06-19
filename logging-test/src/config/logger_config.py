@@ -55,8 +55,7 @@ def setup_logger(name=__name__):
             log_file,
             interval=1,         # 1일 간격으로 로테이션
             when='midnight',    # 자정을 기준점으로 설정
-            # atTime=time(0, 0),  # 매일 자정 00:00에 로테이션
-            atTime=time(10, 53),
+            atTime=time(0, 0),  # 매일 자정 00:00에 로테이션
             # backupCount=30,
             encoding='utf-8'
         )
