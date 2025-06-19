@@ -8,6 +8,12 @@ import os
 from logging.handlers import TimedRotatingFileHandler
 from datetime import time
 
+class CustomFormatter(logging.Formatter):
+    def format(self, record):
+        # 파일명과 줄 번호를 하나의 필드로 조합
+        record.filelineno = f"{record.filename}:{record.lineno}"
+        return super().format(record)
+
 def setup_logger(name=__name__):
     """로거 설정 및 반환"""
     logger = logging.getLogger(name)
@@ -22,8 +28,9 @@ def setup_logger(name=__name__):
     
     # 로그 포맷 (고정 폭 로그 레벨)
     # log_format = '%(asctime)s %(filename)s:%(lineno)d - [%(levelname)-7s] %(message)s'
-    log_format = '%(asctime)s [%(levelname)-7s] %(filename)-20s:%(lineno)-4d - %(message)s'
-    formatter = logging.Formatter(log_format)
+    # log_format = '%(asctime)s [%(levelname)-7s] %(filename)-20s:%(lineno)-4d - %(message)s'
+    log_format = '%(asctime)s [%(levelname)-7s] %(filelineno)-20s - %(message)s'
+    formatter = CustomFormatter(log_format)
     
     # 콘솔 핸들러
     console_handler = logging.StreamHandler()
