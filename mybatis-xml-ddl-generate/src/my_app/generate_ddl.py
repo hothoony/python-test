@@ -42,7 +42,10 @@ def extract_tables_and_columns(sql_list):
             if cols:
                 column_list = cols[0].split(',')
                 for col in column_list:
-                    name = col.strip().split()[-1].strip("`")
+                    parts = col.strip().split()
+                    if not parts:
+                        continue
+                    name = parts[-1].strip("`")
                     table_columns[table].add(name)
             else:
                 # INSERT, UPDATE 등일 경우 VALUES 절에서 추출 가능
@@ -51,7 +54,10 @@ def extract_tables_and_columns(sql_list):
                     for match in matches:
                         column_list = match.split(',')
                         for col in column_list:
-                            col_name = col.strip().split()[-1].strip("`")
+                            parts = col.strip().split()
+                            if not parts:
+                                continue
+                            col_name = parts[-1].strip("`")
                             table_columns[table].add(col_name)
     return table_columns
 
